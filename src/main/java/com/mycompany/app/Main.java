@@ -10,9 +10,9 @@ public class Main {
   public static void main(String[] args) {
     EntityManagerFactory emf = Persistence.createEntityManagerFactory("library_persistence_unit");
 
-    // createInstance(emf);
+     //createInstance(emf);
     // findAndUpdateInstance(emf);
-    // detachAndReattachInstance(emf);
+   // detachAndReattachInstance(emf);
     removeInstance(emf);
 
   }
@@ -73,7 +73,7 @@ public class Main {
     try {
       em.getTransaction().begin();
       Book book1 = em.find(Book.class, 1);
-
+       em.remove(book1);
       em.getTransaction().commit();
     } finally {
       em.close();
