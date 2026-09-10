@@ -14,8 +14,8 @@ public class Main {
     // findAndUpdateInstance(emf);
     // detachAndReattachInstance(emf);
     // removeInstance(emf);
-    useGetReference(emf);
-    // useRefresh(emf);
+    //useGetReference(emf);
+    useRefresh(emf);
 
   }
 
@@ -90,7 +90,7 @@ public class Main {
       em.getTransaction().begin();
 
       Book book2 = em.getReference(Book.class, 2);
-
+      System.out.println(book2);
       em.getTransaction().commit();
     } finally {
       em.close();
